@@ -80,7 +80,7 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
         let nib = UINib(nibName:"PersonalCVC", bundle: nil)
         collectionPersonal.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
         let nib1 = UINib(nibName:"PersonalCRV", bundle: nil)
-        collectionPersonal.register(nib1, forCellWithReuseIdentifier: headerIdentifier)
+        collectionPersonal.register(nib1, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         // Do any additional setup after loading the view.
         
     }
