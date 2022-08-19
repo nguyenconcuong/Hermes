@@ -29,6 +29,8 @@
 		D8719F4828AF2A6C00C72A6C /* PersonalCRV.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8719F4628AF2A6C00C72A6C /* PersonalCRV.xib */; };
 		D8719F5428AF437900C72A6C /* DsCusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8719F5228AF437900C72A6C /* DsCusVC.swift */; };
 		D8719F5528AF437900C72A6C /* DsCusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8719F5328AF437900C72A6C /* DsCusVC.xib */; };
+		D8719F5828AF713800C72A6C /* DsCusTVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8719F5628AF713800C72A6C /* DsCusTVc.swift */; };
+		D8719F5928AF713800C72A6C /* DsCusTVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8719F5728AF713800C72A6C /* DsCusTVc.xib */; };
 		EE97EBE628ADEF6E00E9AD43 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97EBE428ADEF6E00E9AD43 /* MainVC.swift */; };
 		EE97EBE728ADEF6E00E9AD43 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE97EBE528ADEF6E00E9AD43 /* MainVC.xib */; };
 		F09ECAD687399D2FB9162B71 /* Pods_iPOSBilling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C89C6D73CD995ED3F54B8DF /* Pods_iPOSBilling.framework */; };
@@ -90,6 +92,8 @@
 		D8719F4628AF2A6C00C72A6C /* PersonalCRV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCRV.xib; sourceTree = "<group>"; };
 		D8719F5228AF437900C72A6C /* DsCusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsCusVC.swift; sourceTree = "<group>"; };
 		D8719F5328AF437900C72A6C /* DsCusVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DsCusVC.xib; sourceTree = "<group>"; };
+		D8719F5628AF713800C72A6C /* DsCusTVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsCusTVc.swift; sourceTree = "<group>"; };
+		D8719F5728AF713800C72A6C /* DsCusTVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DsCusTVc.xib; sourceTree = "<group>"; };
 		EE97EBE428ADEF6E00E9AD43 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		EE97EBE528ADEF6E00E9AD43 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,8 +209,6 @@
 		D8719F3D28AE3EEA00C72A6C /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				D8719F5228AF437900C72A6C /* DsCusVC.swift */,
-				D8719F5328AF437900C72A6C /* DsCusVC.xib */,
 				D8719F3328AE1B0600C72A6C /* PersonalCVC.swift */,
 				D8719F3428AE1B0600C72A6C /* PersonalCVC.xib */,
 				D8719F2B28ADF85200C72A6C /* PersonalVC.swift */,
@@ -250,6 +252,10 @@
 		D8719F4D28AF3F6300C72A6C /* DS Khách hàng */ = {
 			isa = PBXGroup;
 			children = (
+				D8719F5228AF437900C72A6C /* DsCusVC.swift */,
+				D8719F5328AF437900C72A6C /* DsCusVC.xib */,
+				D8719F5628AF713800C72A6C /* DsCusTVc.swift */,
+				D8719F5728AF713800C72A6C /* DsCusTVc.xib */,
 			);
 			name = "DS Khách hàng";
 			path = "DS Khách hàng";
@@ -362,6 +368,7 @@
 			files = (
 				A8538F7123E7BCB000A916D9 /* LaunchScreen.storyboard in Resources */,
 				A8538F6E23E7BCB000A916D9 /* Assets.xcassets in Resources */,
+				D8719F5928AF713800C72A6C /* DsCusTVc.xib in Resources */,
 				D8719F3628AE1B0600C72A6C /* PersonalCVC.xib in Resources */,
 				D8719F5528AF437900C72A6C /* DsCusVC.xib in Resources */,
 				A87A8E9C23E8633B00049EF8 /* GoogleService-Info.plist in Resources */,
@@ -425,6 +432,7 @@
 				D8719F2D28ADF85200C72A6C /* PersonalVC.swift in Sources */,
 				A8538F6723E7BCAC00A916D9 /* ViewController.swift in Sources */,
 				D8719F4728AF2A6C00C72A6C /* PersonalCRV.swift in Sources */,
+				D8719F5828AF713800C72A6C /* DsCusTVc.swift in Sources */,
 				D8719F2128ADF7DE00C72A6C /* HomeVC.swift in Sources */,
 				D8719F3528AE1B0600C72A6C /* PersonalCVC.swift in Sources */,
 				EE97EBE628ADEF6E00E9AD43 /* MainVC.swift in Sources */,

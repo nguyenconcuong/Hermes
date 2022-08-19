@@ -83,7 +83,7 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
             switch indexPath.row {
             case 2:
                 let cusVc = DsCusVC(nibName: "DsCusVC", bundle: nil)
-                self.navigationController?.pushViewController(cusVc, animated: true);
+                self.present(cusVc, animated: true)
             case 1:
                 break
             default:
