@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>NotifcationServiceExtensionSTG.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>52</integer>
+		</dict>
+		<key>NotificationContentExt.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>53</integer>
+		</dict>
+		<key>STG.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>iPOSBilling.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A8538F6023E7BCAC00A916D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A85391E323E7BE9200A916D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A86BEB73248E28450082F6FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A86BEB81248E28B60082F6FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+PODS:
+  - SwiftLint (0.48.0)
+
+DEPENDENCIES:
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
+
+PODFILE CHECKSUM: 7c305a10febef12947d7e743aa8f8f808d2e4ec7
+
+COCOAPODS: 1.10.1

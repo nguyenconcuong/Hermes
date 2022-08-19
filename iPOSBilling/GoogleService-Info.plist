@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>865574685707-113rmu1pehtdbebihba1vvpcgldht49i.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.865574685707-113rmu1pehtdbebihba1vvpcgldht49i</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>865574685707-kja6eod89j0c6ruj5oc6rtdkj5kaipcp.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAEL_ek9cgjfGLU0IVsHMVspn1M_I6eJlw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>865574685707</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ipos.billing</string>
+	<key>PROJECT_ID</key>
+	<string>iposbilling</string>
+	<key>STORAGE_BUCKET</key>
+	<string>iposbilling.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:865574685707:ios:60fe12f259492db2484b0e</string>
+	<key>DATABASE_URL</key>
+	<string>https://iposbilling.firebaseio.com</string>
+</dict>
+</plist>
