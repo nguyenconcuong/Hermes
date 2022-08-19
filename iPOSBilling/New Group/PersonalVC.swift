@@ -42,7 +42,17 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionheaderview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! PersonalCRV
-        sectionheaderview.titleLable.text = "bán hàng"
+        switch indexPath.section {
+        case 0:
+            sectionheaderview.titleLable.text = "bán hàng"
+        case 1:
+            sectionheaderview.titleLable.text = "Thư Viện"
+        case 2:
+            sectionheaderview.titleLable.text = "Tài khoản"
+        default:
+            break;
+        }
+       
         return sectionheaderview
     }
        // make a cell for each cell index path
@@ -72,7 +82,8 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
         if(indexPath.section == 0){
             switch indexPath.row {
             case 2:
-                self.navigationController?.pushViewController(UIViewController(nibName: "DsCusVC", bundle: nil), animated: true);
+                let cusVc = DsCusVC(nibName: "DsCusVC", bundle: nil)
+                self.navigationController?.pushViewController(cusVc, animated: true);
             case 1:
                 break
             default:
