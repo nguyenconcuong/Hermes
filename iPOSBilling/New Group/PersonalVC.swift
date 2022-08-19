@@ -69,7 +69,17 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            // handle tap events
-
+        if(indexPath.section == 0){
+            switch indexPath.row {
+            case 2:
+                self.navigationController?.pushViewController(UIViewController(nibName: "DsCusVC", bundle: nil), animated: true);
+            case 1:
+                break
+            default:
+                break
+            }
+            
+        }
        }
 
     override func viewDidLoad() {
