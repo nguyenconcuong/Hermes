@@ -30,7 +30,7 @@ class DsCusVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchname = custmerList.filter { (Custumer) -> Bool in
-            return Custumer.name.range(of: searchText, options: [ .caseInsensitive ]) != nil
+            return (Custumer.name.range(of: searchText, options: [ .caseInsensitive ]) != nil) || (Custumer.code.range(of: searchText, options: [ .caseInsensitive ]) != nil)
         }
         if(searchText == "" ){
             searchname = custmerList;
@@ -84,7 +84,7 @@ class DsCusVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     @IBOutlet weak var seachView: UIView!
     @IBOutlet weak var tblDsCus: UITableView!
     override func viewDidLoad() {
-        for i in 0..<7 { // this will add 10 elements to contacts
+        for i in 0..<7 { 
             custmerList.append(Custumer(id: id[i], date: date[i], name: name[i], code: code[i], lead: lead[i]))
         }
         if (!searchActive)

@@ -40,6 +40,7 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionheaderview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! PersonalCRV
         switch indexPath.section {
@@ -92,6 +93,7 @@ class PersonalVC: UIViewController, UICollectionViewDataSource, UICollectionView
             
         }
        }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
