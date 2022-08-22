@@ -101,14 +101,14 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="dTS-gf-u1j"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
-                <constraint firstItem="dTS-gf-u1j" firstAttribute="trailing" secondItem="Ipr-VW-Jxn" secondAttribute="trailing" constant="5" id="0II-P5-Nds"/>
-                <constraint firstItem="Ipr-VW-Jxn" firstAttribute="leading" secondItem="dTS-gf-u1j" secondAttribute="leading" constant="5" id="3eo-w3-F9x"/>
+                <constraint firstItem="dTS-gf-u1j" firstAttribute="trailing" secondItem="Ipr-VW-Jxn" secondAttribute="trailing" id="0II-P5-Nds"/>
+                <constraint firstItem="Ipr-VW-Jxn" firstAttribute="leading" secondItem="dTS-gf-u1j" secondAttribute="leading" id="3eo-w3-F9x"/>
                 <constraint firstItem="Ipr-VW-Jxn" firstAttribute="top" secondItem="sBV-am-FrJ" secondAttribute="bottom" id="Tfy-SI-AgU"/>
                 <constraint firstItem="sBV-am-FrJ" firstAttribute="top" secondItem="lmV-qH-4jR" secondAttribute="top" constant="32" id="aog-XV-fyY"/>
                 <constraint firstItem="sBV-am-FrJ" firstAttribute="leading" secondItem="dTS-gf-u1j" secondAttribute="leading" id="lFZ-c5-bqf"/>
-                <constraint firstItem="dTS-gf-u1j" firstAttribute="bottom" secondItem="Ipr-VW-Jxn" secondAttribute="bottom" constant="5" id="upn-Lq-Kvd"/>
+                <constraint firstItem="dTS-gf-u1j" firstAttribute="bottom" secondItem="Ipr-VW-Jxn" secondAttribute="bottom" id="upn-Lq-Kvd"/>
                 <constraint firstItem="dTS-gf-u1j" firstAttribute="trailing" secondItem="sBV-am-FrJ" secondAttribute="trailing" id="v6F-HK-NQx"/>
             </constraints>
             <point key="canvasLocation" x="208.69565217391306" y="28.532608695652176"/>

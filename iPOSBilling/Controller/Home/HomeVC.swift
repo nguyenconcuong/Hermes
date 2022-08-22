@@ -12,7 +12,6 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Home"
         // Do any additional setup after loading the view.
     }
@@ -28,4 +27,14 @@ class HomeVC: UIViewController {
     }
     */
 
+}
+extension UIViewController{
+    func showAlert(title: String, message: String)  {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }

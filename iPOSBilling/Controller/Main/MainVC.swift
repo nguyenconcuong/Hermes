@@ -8,22 +8,18 @@
 
 import UIKit
 
-class MainVC: UITabBarController, UITabBarControllerDelegate {
+class MainVC: UITabBarController  {
     override func viewDidLoad() {
             super.viewDidLoad()
-            
             //Assign self for delegate for that ViewController can respond to UITabBarControllerDelegate methods
             self.delegate = self
-            
         }
-        
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             
             let homevc = HomeVC()
             let tabHomeBarItem = UITabBarItem(title: "Home", image: UIImage(named: "tabbar_ic_home"), selectedImage: UIImage(named: "tabbar_ic_home_selected"))
             homevc.tabBarItem = tabHomeBarItem
-            
             
             let reportvc = ReportVC()
             let tabreportBarItem = UITabBarItem(title: "Báo Cáo", image: UIImage(named: "tabbar_ic_notify"), selectedImage: UIImage(named: "tabbar_ic_notify_selected"))
@@ -43,13 +39,6 @@ class MainVC: UITabBarController, UITabBarControllerDelegate {
             
             self.viewControllers = [homevc, reportvc,Cusvc,personalvc]
         }
-        
-        // UITabBarControllerDelegate method
-        func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-            print("Selected \(viewController.title!)")
-        }
-
-
     /*
     // MARK: - Navigation
 
@@ -59,5 +48,11 @@ class MainVC: UITabBarController, UITabBarControllerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+}
+// MARK: -UITabBarControllerDelegate
+extension MainVC: UITabBarControllerDelegate{
+ // UITabBarControllerDelegate method
+ func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    
+ }
 }
