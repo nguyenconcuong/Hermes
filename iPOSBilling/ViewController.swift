@@ -29,3 +29,12 @@ class ViewController: UIViewController {
     
 }
 
+extension UIViewController{
+    func showArlet(title: String, mess: String){
+        let alert = UIAlertController(title: title, message: mess, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+       self.present(alert, animated: true, completion: nil)
+    }
+}

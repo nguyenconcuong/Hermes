@@ -1,5 +1,5 @@
 //
-//  ItemsModel.swift
+//  ItemsTitleModal.swift
 //  iPOSBilling
 //
 //  Created by ipos on 22/08/2022.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct Items {
-    var imtems: String
-    var imageitems: String
-    var itemScreen: String
+struct ItemGroup{
+    var itemsList: [Items] 
+    var title: String
 }
-
-

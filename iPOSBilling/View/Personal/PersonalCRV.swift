@@ -12,7 +12,9 @@ class PersonalCRV: UICollectionReusableView {
     @IBOutlet weak var titleLable: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLable.font = UIFont(name: "SFUIDisplay-Semibold", size: 15)
         // Initialization code
     }
     
 }
+

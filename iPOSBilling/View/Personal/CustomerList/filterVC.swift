@@ -1,18 +1,18 @@
 //
-//  HomeVC.swift
+//  filterVC.swift
 //  iPOSBilling
 //
-//  Created by ipos on 18/08/2022.
+//  Created by ipos on 25/08/2022.
 //  Copyright © 2022 quan nguyen. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController {
+class filterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
+
         // Do any additional setup after loading the view.
     }
 
@@ -28,16 +28,3 @@ class HomeVC: UIViewController {
     */
 
 }
-extension UIAlertController {
-  func addActions(actions: [UIAlertAction], preferred: String? = nil) {
-
-    for action in actions {
-      self.addAction(action)
-
-        if let preferred = preferred, preferred == action.title {
-        self.preferredAction = action
-      }
-    }
-  }
-}
-

@@ -64,13 +64,13 @@
 	<array>
 		<string>SanFranciscoDisplay-Bold.OTF</string>
 		<string>AMERICORPS.TTF</string>
-		<string>SanFranciscoDisplay-Medium.OTF</string>
+		<string>SFUIDisplay-Medium.OTF</string>
 		<string>Sofachrome-Regular.OTF</string>
-		<string>SanFranciscoDisplay-Regular.OTF</string>
-		<string>SanFranciscoDisplay-Semibold.OTF</string>
-		<string>SanFranciscoDisplay-Medium.OTF</string>
-		<string>SanFranciscoDisplay-Ultralight.OTF</string>
-		<string>SanFranciscoDisplay-Light.OTF</string>
+		<string>SFUIDisplay-Regular.otf</string>
+		<string>SFUIDisplay-Semibold.otf</string>
+		<string>SFUIDisplay-Medium.otf</string>
+		<string>SFUIDisplay-Ultralight.otf</string>
+		<string>SFUIDisplay-Light.ttf</string>
 		<dict>
 			<key>NSAllowsArbitraryLoads</key>
 			<true/>

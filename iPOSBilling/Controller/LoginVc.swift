@@ -1,22 +1,26 @@
 //
-//  HomeVC.swift
+//  LoginVC.swift
 //  iPOSBilling
 //
-//  Created by ipos on 18/08/2022.
+//  Created by ipos on 24/08/2022.
 //  Copyright © 2022 quan nguyen. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController {
-
+class LoginVC: UIViewController {
+    @IBOutlet weak var txtEmail: UITextField?
+    @IBOutlet weak var txtpassword: UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
         // Do any additional setup after loading the view.
     }
-
-
+    @IBAction func btnLogin(_ sender: Any) {
+    print(txtEmail)
+    }
+    func initData(){
+  
+    }
     /*
     // MARK: - Navigation
 
@@ -28,16 +32,3 @@ class HomeVC: UIViewController {
     */
 
 }
-extension UIAlertController {
-  func addActions(actions: [UIAlertAction], preferred: String? = nil) {
-
-    for action in actions {
-      self.addAction(action)
-
-        if let preferred = preferred, preferred == action.title {
-        self.preferredAction = action
-      }
-    }
-  }
-}
-

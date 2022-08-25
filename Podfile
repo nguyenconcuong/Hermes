@@ -6,6 +6,7 @@ inhibit_all_warnings!
 
 def code_quality
     pod 'SwiftLint'
+    pod 'QNRequest', '~> 1.3.2'
 end
 
 def available_pods

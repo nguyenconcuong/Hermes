@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (4.9.1)
+  - QNRequest (1.3.2):
+    - Alamofire (~> 4.9.1)
   - SwiftLint (0.48.0)
 
 DEPENDENCIES:
+  - QNRequest (~> 1.3.2)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - QNRequest
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  QNRequest: 22ef2059c5cf64846cb9760676aa92d5690dec5e
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
 
-PODFILE CHECKSUM: 7c305a10febef12947d7e743aa8f8f808d2e4ec7
+PODFILE CHECKSUM: a83dfc88f159e3c0595c8340a11ff21a9979967d
 
 COCOAPODS: 1.10.1
