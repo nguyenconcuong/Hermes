@@ -81,9 +81,9 @@ class CusVc: UIViewController {
             tableDataList.append(TableData(title: "mã số thuế", value: ""))
         }
         if let taxEmail = Customer?.taxEmail{
-            tableDataList.append(TableData(title: "email thuế", value: taxEmail))
+            tableDataList.append(TableData(title: "Email thuế", value: taxEmail))
         }else{
-            tableDataList.append(TableData(title: "email thuế", value: ""))
+            tableDataList.append(TableData(title: "Email thuế", value: ""))
         }
         if let contactName = Customer?.contactName{
             tableDataList.append(TableData(title: "Đại diện", value: contactName))
@@ -285,7 +285,7 @@ extension CusVc: UITableViewDataSource{
             let label = UILabel()
         let button = UIButton()
         button.setImage(UIImage(named: "ic_arrow_customer"), for: .normal)
-        button.frame = CGRect.init(x: headerView.frame.width-50, y: 0, width: 40, height: 40)
+        button.frame = CGRect.init(x: headerView.frame.width-30, y: 0, width: 40, height: 40)
         button.addTarget(self, action: #selector(handleAddButtonDidTap), for: .touchUpInside)
         button.tag = section
         label.textColor = UIColor(red: 0.502, green: 0.502, blue: 0.502, alpha: 1)
@@ -312,9 +312,9 @@ extension CusVc: UITableViewDataSource{
             if indexPath.row == 10{
                 return 5
             }
-            return 50
+           return UITableView.automaticDimension
         default:
-            return 50
+            return UITableView.automaticDimension
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -326,9 +326,32 @@ extension CusVc: UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        btncopy.isHidden = true
         if indexPath.section < 2{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! CusCell
             let tableData = listTableCustomer[indexPath.section].tableData
+            if tableData?[indexPath.row].value != ""{
+                if tableData?[indexPath.row].title == "mã số thuế"{
+                    cell.btnCopy.isHidden = false
+                    print(indexPath)
+                }
+                if tableData?[indexPath.row].title == "Địa chỉ"{
+                    cell.btnCopy.isHidden = false
+                }
+                if tableData?[indexPath.row].title?.range(of: "Email")  != nil {
+                    cell.btnCopy.isHidden = false
+                    cell.btnCopy.setImage(UIImage(named: "ic_email"), for: .normal)
+                    cell.btnCopy.setTitle("Gửi", for: .normal)
+                }
+                if tableData?[indexPath.row].title == "số điện thoại", tableData?[indexPath.row].value != ""{
+                    cell.btnCopy.isHidden = false
+                    cell.btnCopy.setImage(UIImage(named: "ic_phone"), for: .normal)
+                    cell.btnCopy.setTitle("Gọi", for: .normal)
+                }
+            }else{
+                cell.btnCopy.isHidden = true
+            }
+           
             cell.txtTitle.text = tableData?[indexPath.row].title
             cell.txtContent.text = tableData?[indexPath.row].value
            return cell
