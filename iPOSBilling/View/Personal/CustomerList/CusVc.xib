@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="ViewTTKH" destination="eoT-2J-wro" id="DPw-On-PyR"/>
                 <outlet property="btnEdit" destination="Ubs-AL-YBu" id="WAa-5q-GHj"/>
+                <outlet property="btnLeadDetail" destination="KiB-kc-iFO" id="T39-iI-Nkr"/>
                 <outlet property="btncopy" destination="1QG-5Q-m8L" id="Njl-XP-7l9"/>
                 <outlet property="tblCus" destination="ziO-ff-Dsa" id="GfZ-mL-vVs"/>
                 <outlet property="txtId" destination="I0G-gW-OUt" id="I5s-8V-mPw"/>
@@ -36,13 +37,17 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubs-AL-YBu">
                             <rect key="frame" x="334" y="10" width="70" height="30"/>
-                            <color key="backgroundColor" red="0.39097036754858883" green="0.796230421138024" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.20392156862745098" green="0.6588235294117647" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="xzM-ef-VmI"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title=" Sửa" image="ic_edit">
-                                <color key="titleColor" systemColor="linkColor"/>
+                                <color key="titleColor" red="0.18431372549019609" green="0.47715937815555914" blue="0.9388688971682424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="btnEdit:" destination="-1" eventType="touchUpInside" id="5HG-6S-tVO"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,31 +93,45 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="Copy" image="ic_copy">
-                        <color key="titleColor" systemColor="systemBlueColor"/>
+                        <color key="titleColor" red="0.019607843137254902" green="0.37647058823529411" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-ff-Dsa">
-                    <rect key="frame" x="0.0" y="159" width="414" height="703"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-ff-Dsa">
+                    <rect key="frame" x="0.0" y="199" width="414" height="663"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-kc-iFO">
+                    <rect key="frame" x="319" y="164" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.019607843137254902" green="0.37647058823529411" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Zwj-oH-74X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="chi tiết lead">
+                        <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="1QG-5Q-m8L" firstAttribute="top" secondItem="eoT-2J-wro" secondAttribute="bottom" constant="30" id="2vY-8Z-JoK"/>
+                <constraint firstItem="ziO-ff-Dsa" firstAttribute="top" secondItem="KiB-kc-iFO" secondAttribute="bottom" constant="5" id="3s9-IR-BgB"/>
                 <constraint firstItem="ziO-ff-Dsa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4gZ-8i-5Wg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ziO-ff-Dsa" secondAttribute="trailing" id="8f8-lR-cjc"/>
                 <constraint firstItem="I0G-gW-OUt" firstAttribute="leading" secondItem="iwo-Td-Kvp" secondAttribute="trailing" constant="10" id="BhG-S7-0vb"/>
                 <constraint firstItem="I0G-gW-OUt" firstAttribute="top" secondItem="ohz-lt-Ta6" secondAttribute="bottom" constant="5" id="CBO-Bx-eFf"/>
                 <constraint firstItem="ohz-lt-Ta6" firstAttribute="top" secondItem="eoT-2J-wro" secondAttribute="bottom" constant="20" id="MGe-aK-vjf"/>
-                <constraint firstItem="ziO-ff-Dsa" firstAttribute="top" secondItem="I0G-gW-OUt" secondAttribute="bottom" id="NIQ-zM-HCg"/>
+                <constraint firstItem="ziO-ff-Dsa" firstAttribute="top" secondItem="I0G-gW-OUt" secondAttribute="bottom" constant="40" id="NIQ-zM-HCg"/>
                 <constraint firstItem="iwo-Td-Kvp" firstAttribute="top" secondItem="eoT-2J-wro" secondAttribute="bottom" constant="20" id="O7d-QQ-KbC"/>
                 <constraint firstItem="iwo-Td-Kvp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OHw-1Z-m82"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ohz-lt-Ta6" secondAttribute="trailing" constant="5" id="Q72-yS-FHt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KiB-kc-iFO" secondAttribute="trailing" constant="-5" id="dgm-6N-afS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eoT-2J-wro" secondAttribute="trailing" id="g00-sf-xjY"/>
                 <constraint firstItem="ohz-lt-Ta6" firstAttribute="leading" secondItem="iwo-Td-Kvp" secondAttribute="trailing" constant="10" id="i9c-Su-ybO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I0G-gW-OUt" secondAttribute="trailing" constant="5" id="k9b-jt-df8"/>
                 <constraint firstItem="eoT-2J-wro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lgz-Rb-JR2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ziO-ff-Dsa" secondAttribute="bottom" id="v07-Ol-uQF"/>
+                <constraint firstItem="KiB-kc-iFO" firstAttribute="top" secondItem="I0G-gW-OUt" secondAttribute="bottom" constant="5" id="vi4-HI-fxS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1QG-5Q-m8L" secondAttribute="trailing" constant="20" id="wdg-9V-TB8"/>
                 <constraint firstItem="eoT-2J-wro" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x1a-wy-tnV"/>
             </constraints>
@@ -123,14 +142,8 @@
         <image name="company_default" width="39" height="39"/>
         <image name="ic_copy" width="16" height="15"/>
         <image name="ic_edit" width="12.666666984558105" height="12.666666984558105"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

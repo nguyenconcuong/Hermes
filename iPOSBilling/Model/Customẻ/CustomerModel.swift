@@ -22,4 +22,13 @@ struct Customer: Codable {
     var contactFacebook: String?
     var picSale: String?
     var mapTime: String?
+    var createdTime: String?
+    var eContracts: [eContracts]?
+    var leadPartner: leadPartner?
+    var ownerSale: String?
+    var favoriteBy: [String]?
+    var sourceGroup: String?
+    var sourceName:String?
+    var lastCareTime:String?
+    var status:String?
 }

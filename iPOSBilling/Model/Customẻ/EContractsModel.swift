@@ -7,9 +7,9 @@
 //
 
 import Foundation
-struct EContracts: Codable {
+struct eContracts: Codable {
     var email:String?
+    var sendTime:String?
     var isSigned: Int?
     var status: String?
-    
 }

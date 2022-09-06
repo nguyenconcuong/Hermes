@@ -9,10 +9,30 @@ import Foundation
 import QNRequest
 //MARK: - RO
 class ApiOperations {
-   
     static func getListCustomer
+    (   textSearch: String,
+        page: Int,
+        token: String,
+        resultsPerPage: Int,
+        success: @escaping (_ response: ApiResult<DataCustomer>) -> (),
+        fail: @escaping (ErrorApp) -> ()
+    ){
+        let baseurl = AppDelegate.shareDelegate.baseurl
+        let url =  "\(baseurl)/billing/api/customer/company/list"
+        let api = ApiRequest(urlRequest:  url, type: .get)
+        api.params["textSearch"] = textSearch
+        api.params["page"] = page
+        api.params["results_per_page"] = resultsPerPage
+        api.header = [
+            "token" : token,
+            "Content-Type": "application/json"
+        ]
+        api.excuteWithObject(success: success, fail: fail)
+    }
+    static func searchListCustomer
     (
         page: Int,
+        textSearch: String,
         token: String,
         resultsPerPage: Int,
         success: @escaping (_ response: ApiResult<DataCustomer>) -> (),
@@ -23,6 +43,7 @@ class ApiOperations {
         let api = ApiRequest(urlRequest:  url, type: .get)
         api.params["page"] = page
         api.params["results_per_page"] = resultsPerPage
+        api.params["textSearch"] = textSearch
         api.header = [
             "token" : token,
             "Content-Type": "application/json"
@@ -58,11 +79,9 @@ class ApiOperations {
         let baseurl = AppDelegate.shareDelegate.baseurl
         let url = "\(baseurl)/billing/api/auth/renew_token"
         let api = ApiRequest(urlRequest: url, type: .post)
-
         api.params["last_token"] = token
         api.params["email"] = email
         api.header = ["token": token, "Content-Type": "application/x-www-form-urlencoded"]
-        
         api.excuteWithObject(success: success, fail: fail)
     }
 }

@@ -14,6 +14,9 @@ class CusCell: UITableViewCell {
     @IBOutlet weak var btnCopy: UIButton!
     @IBOutlet weak var txtContent: UILabel!
     override func awakeFromNib() {
+     txtTitle.font = UIFont(name: "SFUDisplay-Regular", size: 10)
+        txtTitle.textColor = UIColor(red: 0.502, green: 0.502, blue: 0.502, alpha: 1)
+     
         super.awakeFromNib()
         // Initialization code
     }

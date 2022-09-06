@@ -18,8 +18,6 @@ class LoginnVc: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-    
-    
     @IBAction func login(_ sender: Any) {
       //  showSpinner(onView: self.view)
         let email = txtEmail.text!
@@ -31,14 +29,11 @@ class LoginnVc: UIViewController {
             UserDefaults.standard.set(respone.data?.token, forKey: "userToken")
             UserDefaults.standard.set(respone.data?.email, forKey: "userEmail")
             AppDelegate.shareDelegate.user = respone.data
-           
         } fail: { error in
             // create the alert
             self.showArlet(title: "Thông báo", mess: error.getMessage())
         }
     }
-  
-    
     /*(email: quannv.tm@gmail.com, password: "thanos", deviceId: "0bd7f919-9f7e-4f8a-b940-e40c50f6b458")*/
     /*
      

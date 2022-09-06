@@ -20,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userEmail = UserDefaults.standard.string(forKey: "userEmail")
         if let userToken = userToken,let userEmail = userEmail{
             loginWithtoken(userToken: userToken,email: userEmail)
-        }else{
+        } else {
             window = UIWindow(frame: UIScreen.main.bounds)
             let main = LoginnVc(nibName: "LoginnVc", bundle: nil)
             window?.rootViewController = main
-
             if let window = window {
                 window.makeKeyAndVisible()
             }
@@ -33,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func loginWithtoken(userToken: String, email: String){
-
         ApiOperations.loginWithToken(email: email,token: userToken){respone in
             let main = MainVC(nibName: "MainVC", bundle: nil)
             UserDefaults.standard.set(respone.data?.token, forKey: "userToken")
@@ -43,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let alert = UIAlertController(title: "thông báo", message: Error.getMessage(), preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let main = LoginnVc(nibName: "LoginnVc", bundle: nil)
+            self.window?.rootViewController = main
+            if let window = self.window {
+                window.makeKeyAndVisible()
+            }
             // show the alert
            //present(alert, animated: true, completion: nil)
         }

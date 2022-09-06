@@ -10,13 +10,15 @@ import UIKit
 import QNRequest
 
 class DsCusVC: UIViewController {
+    var isFulldata = false
     var isLoading = false
+    var isSearch = false
     var user: User?
     var page = 1
     var id = 1
+    var count = 0
+    var textSearch = ""
     var custmerList: [Customer] = []
-    var searchName = [Customer]()
-    var searchData = false
     @IBOutlet weak var txtDskh: UILabel!
     @IBOutlet weak var listView: UIView!
     @IBOutlet weak var seachBox: UISearchBar!
@@ -51,7 +53,7 @@ class DsCusVC: UIViewController {
     
     // MARK: - Action
     
-    
+
     @IBAction func showSeachbox(_ sender: Any) {
         seachView.isHidden = false
         listView.isHidden = true
@@ -69,23 +71,35 @@ class DsCusVC: UIViewController {
     }
     
     func initData(page: Int){
+        
+        if(isSearch){
+            self.custmerList.removeAll()
+            self.page = 1
+        }
         user = AppDelegate.shareDelegate.user
         let token = user?.token
         if let token = token{
-            ApiOperations.getListCustomer(page: page, token: token , resultsPerPage: 100) { respone in
+            ApiOperations.getListCustomer(textSearch: textSearch,page: page, token: token , resultsPerPage: 100) { respone in
                 if let a = respone.data?.companies{
                     self.custmerList.append(contentsOf: a)
                     if let count = respone.data?.count{
+                        self.count = count
                         self.txtDskh.text = "Danh sách khách hàng (" + String(describing: count)  + ")"
                     }
                 }
+                self.isFulldata = false
+                self.isLoading = false
                 self.tblDsCus.reloadData()
             } fail: { error in
                 self.showArlet(title: "Thông báo", mess: error.getMessage())
-                self.checkData(status: true)
+                //self.checkData(status: true)
+                //  self.isLoading = false
+                self.loadMoreData()
             }
         }
+        
     }
+    
 }
 // MARK: - TABLEVIEW DELEGATE
 extension DsCusVC: UITableViewDelegate{
@@ -97,7 +111,7 @@ extension DsCusVC: UITableViewDelegate{
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         let CusVc = CusVc(nibName: "CusVc", bundle: nil)
         CusVc.Customer = custmerList[indexPath.row]
         self.present(CusVc, animated: true)
@@ -109,25 +123,44 @@ extension DsCusVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! DsCusTVc
-            let data = custmerList[indexPath.row]
-            cell.txtId.text = String(describing: id)
-            if let name = data.name{
-                cell.txtName.text = name
+            cell.txtId.text = String(indexPath.row + 1) + "."
+            if custmerList.count != 0 {
+                let data = custmerList[indexPath.row]
+                if let name = data.name{
+                    cell.txtName.text = name
+                }else {
+                    cell.txtName.text = ""
+                }
+                if let companyid = data.companyId{
+                    cell.txtCode.text = companyid
+                }
+                else{
+                    cell.txtCode.text = ""
+                }
+                if let picSale = data.picSale{
+                    cell.txtLead.text = picSale
+                }else {
+                    cell.txtLead.text = ""
+                }
+                if let maptime = data.mapTime{
+                    cell.txtDate.text =  maptime
+                }else {
+                    cell.txtDate.text =  ""
+                }
+                
             }
-            if let companyid = data.companyId{
-                cell.txtCode.text = companyid
-            }
-            if let picSale = data.picSale{
-                cell.txtLead.text = picSale
-            }
-            if let maptime = data.mapTime{
-                cell.txtDate.text =  maptime
-            }
-            
+           
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "loadingcellid", for: indexPath) as! LoadingCell
-            cell.activityIndicator.startAnimating()
+            if !isFulldata{
+                cell.activityIndicator.isHidden = false
+                cell.activityIndicator.startAnimating()
+            }else {
+                cell.activityIndicator.isHidden = true
+                cell.activityIndicator.stopAnimating()
+            }
+            
             return cell
         }
     }
@@ -136,6 +169,15 @@ extension DsCusVC: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
+            if custmerList.count == 0{
+                checkData(status: true)
+                page = 1
+            }else {
+                checkData(status: false)
+            }
+            if count == custmerList.count{
+                isFulldata = true
+            }
             return custmerList.count
         } else if section == 1 {
             return 1
@@ -144,7 +186,7 @@ extension DsCusVC: UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == custmerList.count - 1, !isLoading {
+        if indexPath.row == custmerList.count - 1, !isLoading, !isFulldata {
             loadMoreData()
         }
     }
@@ -153,51 +195,29 @@ extension DsCusVC: UITableViewDataSource{
             self.isLoading = true
             DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
                 self.page = self.page+1
-                let token = self.user?.token
-                if let token = token{
-                    ApiOperations.getListCustomer(page: self.page, token: token , resultsPerPage: 100) { respone in
-                        if let a = respone.data?.companies{
-                            self.custmerList.append(contentsOf: a)
-                            if let count = respone.data?.count{
-                                self.txtDskh.text = "Danh sách khách hàng (" + String(describing: count)  + ")"
-                                DispatchQueue.main.async {
-                                    self.tblDsCus.reloadData()
-                                    self.isLoading = false
-                                }
-                            }
-                        }
-                    } fail: { error in
-                        self.showArlet(title: "Thông Báo", mess: error.getMessage())
-                    }
+                if (self.user?.token) != nil{
+                    self.initData(page: self.page)
                 }
-
+                
             }
         }
     }
 }
+
 // MARK: - SEARCHBOX DELETGATE
 extension DsCusVC: UISearchBarDelegate{
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if(searchText == "" ){
-            if(!custmerList.isEmpty) {
-                checkData(status: false)
-                txtNodata.text = "Dữ Liệu Trống"
-                imgNodata.image = UIImage(named: "error_icon")
-            }
-            searchName = custmerList;
-        } else {
-            searchName = custmerList.filter { (Custumer) -> Bool in
-                /*
-                 return (Custumer.name.range(of: searchText, options: [ .caseInsensitive ]) != nil) || (Custumer.phone.range(of: searchText, options: [ .caseInsensitive ]) != nil)*/
-                return true
-            }
-            if(searchName.isEmpty){
-                checkData(status: true)
-            } else{
-                checkData(status: false)
-            }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !isSearch {
+            isSearch = true
+            self.textSearch = searchBar.text ?? ""
+            initData(page: page)
         }
-        self.tblDsCus.reloadData()
+        if textSearch == ""{
+            page = 1
+        }
+        isSearch = false
+       
     }
 }
+
 
