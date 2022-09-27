@@ -7,3 +7,8 @@
 //
 
 import Foundation
+struct Brand:Codable {
+    var brandId: String?
+    var companyId:String?
+    var name:String?
+}

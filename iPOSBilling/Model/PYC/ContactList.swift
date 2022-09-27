@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct ContactList:Codable {
+    var data:[data]?
+    var count: Int!
+}

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+struct ProductList:Codable {
+    var count: Int?
+    var page: Int?
+    var numPerPage: Int?
+    var data:[Product]?
+}

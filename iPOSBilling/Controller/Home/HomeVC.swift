@@ -33,7 +33,6 @@ extension UIAlertController {
 
     for action in actions {
       self.addAction(action)
-
         if let preferred = preferred, preferred == action.title {
         self.preferredAction = action
       }

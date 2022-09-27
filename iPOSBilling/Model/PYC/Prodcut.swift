@@ -7,3 +7,9 @@
 //
 
 import Foundation
+struct Product:Codable{
+    var code: String?
+    var type: String?
+    var name:String?
+    var deployRole:String?
+}

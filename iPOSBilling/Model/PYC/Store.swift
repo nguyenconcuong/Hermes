@@ -7,3 +7,10 @@
 //
 
 import Foundation
+struct Store:Codable {
+    var storeId: Int?
+    var brandId:String?
+    var companyId:String?
+    var name:String?
+    var address:String?
+}

@@ -1,5 +1,5 @@
 //
-//  ConfigModal.swift
+//  DepartmentModal.swift
 //  iPOSBilling
 //
 //  Created by ipos on 08/09/2022.
@@ -7,7 +7,8 @@
 //
 
 import Foundation
-struct Config: Codable{
-    var key: String?
-    var value: String?
+struct Department: Codable{
+    var code: String?
+    var name: String?
+    var isReport: Int?
 }

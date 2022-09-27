@@ -7,3 +7,17 @@
 //
 
 import Foundation
+struct Service:Codable {
+    var code: String?
+    var productCode: String?
+    var name:String?
+    var desc:String?
+    var type:String?
+    var image:String?
+    var unitPrice:Int?
+    var unitScope:String?
+    var unitName:String?
+    var minChoice:Int?
+    var maxChoice:Int?
+    var autoSerial:Int?
+}

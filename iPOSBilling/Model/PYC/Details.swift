@@ -7,3 +7,11 @@
 //
 
 import Foundation
+struct Details {
+    var code:String?
+    var productCode:String?
+    var name:String?
+    var desc:String?
+    var type:String?
+
+}

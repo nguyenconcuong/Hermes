@@ -1,21 +1,124 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ComboServiceCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="ComboServiceCell" customModule="Hermes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDd-Tv-jrz">
+                        <rect key="frame" x="210" y="10" width="100" height="30"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zG1-wR-vfG">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utx-Oe-Tnt">
+                                <rect key="frame" x="2" y="2" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="H7B-lP-QHg"/>
+                                    <constraint firstAttribute="height" constant="26" id="ygF-hG-iR8"/>
+                                </constraints>
+                                <state key="normal" image="ic_decrease"/>
+                                <connections>
+                                    <action selector="ActionDecrease:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eLP-WB-Vcn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxw-sC-gem">
+                                <rect key="frame" x="72" y="2" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="Qa3-Yu-CU0"/>
+                                </constraints>
+                                <state key="normal" image="ic_increase"/>
+                                <connections>
+                                    <action selector="ActionIncrease:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xe3-fh-qT6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="utx-Oe-Tnt" firstAttribute="top" secondItem="ZDd-Tv-jrz" secondAttribute="top" constant="2" id="43u-fl-eKj"/>
+                            <constraint firstItem="zG1-wR-vfG" firstAttribute="top" secondItem="ZDd-Tv-jrz" secondAttribute="top" id="DND-Jv-kha"/>
+                            <constraint firstAttribute="trailing" secondItem="zxw-sC-gem" secondAttribute="trailing" constant="2" id="Ke0-wR-M5l"/>
+                            <constraint firstItem="utx-Oe-Tnt" firstAttribute="leading" secondItem="ZDd-Tv-jrz" secondAttribute="leading" constant="2" id="XN5-Tg-du2"/>
+                            <constraint firstAttribute="bottom" secondItem="utx-Oe-Tnt" secondAttribute="bottom" constant="2" id="aeu-5a-MLc"/>
+                            <constraint firstAttribute="bottom" secondItem="zG1-wR-vfG" secondAttribute="bottom" id="auN-5W-Mg2"/>
+                            <constraint firstItem="zxw-sC-gem" firstAttribute="top" secondItem="ZDd-Tv-jrz" secondAttribute="top" constant="2" id="gES-JC-Yr4"/>
+                            <constraint firstAttribute="width" constant="100" id="qTU-ts-ebw"/>
+                            <constraint firstAttribute="height" constant="30" id="sWj-ma-PFd"/>
+                            <constraint firstAttribute="trailing" secondItem="zG1-wR-vfG" secondAttribute="trailing" id="sh0-xD-HbV"/>
+                            <constraint firstItem="zG1-wR-vfG" firstAttribute="leading" secondItem="ZDd-Tv-jrz" secondAttribute="leading" id="wZf-5U-Jpd"/>
+                            <constraint firstAttribute="bottom" secondItem="zxw-sC-gem" secondAttribute="bottom" constant="2" id="ycW-Kf-YlJ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gói thuê bao Fabi 1 năm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXR-fs-1Nz">
+                        <rect key="frame" x="10" y="10" width="190" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="WPa-yX-glg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+12 thánh - thuê bao tháng phần mềm fabi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-eB-zML">
+                        <rect key="frame" x="10" y="40" width="310" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.400.000đ/gói" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-Kv-GyV">
+                        <rect key="frame" x="110" y="60" width="200" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="rnl-0p-kmi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Oz9-eB-zML" secondAttribute="trailing" id="4bZ-BY-8BM"/>
+                    <constraint firstItem="fXR-fs-1Nz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7VB-Gz-YYI"/>
+                    <constraint firstAttribute="bottom" secondItem="ZT8-Kv-GyV" secondAttribute="bottom" constant="5" id="GcR-AH-Thi"/>
+                    <constraint firstItem="ZDd-Tv-jrz" firstAttribute="leading" secondItem="fXR-fs-1Nz" secondAttribute="trailing" constant="10" id="Mcl-uC-49T"/>
+                    <constraint firstItem="fXR-fs-1Nz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="QRO-70-Rm7"/>
+                    <constraint firstAttribute="trailing" secondItem="ZDd-Tv-jrz" secondAttribute="trailing" constant="10" id="S7d-2K-ZY2"/>
+                    <constraint firstAttribute="trailing" secondItem="ZT8-Kv-GyV" secondAttribute="trailing" constant="10" id="VUm-Xd-Jvi"/>
+                    <constraint firstAttribute="bottom" secondItem="Oz9-eB-zML" secondAttribute="bottom" constant="20" id="YwZ-Zm-0U2"/>
+                    <constraint firstItem="Oz9-eB-zML" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bj3-AB-cUu"/>
+                    <constraint firstItem="ZDd-Tv-jrz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tAy-In-LCC"/>
+                    <constraint firstItem="ZT8-Kv-GyV" firstAttribute="top" secondItem="ZDd-Tv-jrz" secondAttribute="bottom" constant="20" id="wSJ-jf-Wx5"/>
+                    <constraint firstItem="Oz9-eB-zML" firstAttribute="top" secondItem="fXR-fs-1Nz" secondAttribute="bottom" id="zG3-8y-t68"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelAmount" destination="ZT8-Kv-GyV" id="qWn-al-GRY"/>
+                <outlet property="labelInfo" destination="Oz9-eB-zML" id="k8s-Lq-eKZ"/>
+                <outlet property="labelName" destination="fXR-fs-1Nz" id="o4O-JW-kvp"/>
+                <outlet property="textCount" destination="zG1-wR-vfG" id="qms-Dc-fdf"/>
+            </connections>
+            <point key="canvasLocation" x="66.666666666666671" y="68.303571428571431"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_decrease" width="26" height="26"/>
+        <image name="ic_increase" width="26.333333969116211" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

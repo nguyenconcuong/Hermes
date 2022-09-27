@@ -48,9 +48,11 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="nWt-fr-bXv"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hermes phiên bản 1.9.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjf-FR-4mM">
-                    <rect key="frame" x="-79" y="835" width="414" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hermes phiên bản 1.9.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjf-FR-4mM">
+                    <rect key="frame" x="0.0" y="842" width="414" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="fpl-s9-Fdp"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -70,12 +72,15 @@
                 <constraint firstItem="MXu-iZ-kdW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EhZ-7c-Zbi"/>
                 <constraint firstItem="0Lu-Jr-RBN" firstAttribute="top" secondItem="VWC-56-2Xn" secondAttribute="bottom" constant="70" id="Fqp-cc-a26"/>
                 <constraint firstItem="d3O-44-9xr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Gvz-m0-eFz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jjf-FR-4mM" secondAttribute="trailing" id="LdY-4h-Zh2"/>
                 <constraint firstItem="MXu-iZ-kdW" firstAttribute="top" secondItem="bfa-CY-sF3" secondAttribute="bottom" constant="50" id="Qva-eP-IZ2"/>
+                <constraint firstItem="jjf-FR-4mM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TI8-Nc-Roe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MXu-iZ-kdW" secondAttribute="trailing" constant="150" id="ULe-gq-iMM"/>
                 <constraint firstItem="bfa-CY-sF3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="abs-Zr-uGz"/>
                 <constraint firstItem="VWC-56-2Xn" firstAttribute="top" secondItem="d3O-44-9xr" secondAttribute="bottom" constant="30" id="cTv-BZ-Eoh"/>
                 <constraint firstItem="MXu-iZ-kdW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="150" id="e3p-S0-4nn"/>
                 <constraint firstItem="d3O-44-9xr" firstAttribute="top" secondItem="MXu-iZ-kdW" secondAttribute="bottom" constant="30" id="fQi-6R-Ozd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jjf-FR-4mM" secondAttribute="bottom" id="gTe-mg-egk"/>
                 <constraint firstItem="0Lu-Jr-RBN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="120" id="gtj-dO-rm2"/>
                 <constraint firstItem="bfa-CY-sF3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oDf-0g-R1P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VWC-56-2Xn" secondAttribute="trailing" constant="30" id="pbF-IZ-Pdf"/>

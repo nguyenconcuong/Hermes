@@ -34,7 +34,6 @@ class PersonalVC: UIViewController {
     let myCNId = "myCNId"
     let myRoseId = "myRoseId"
     let myVoucher = "myVoucher"
-    
     let videoId = "videoId"
     let documentId = "documentId"
     let nearbyId = "nearbyId"
@@ -193,7 +192,6 @@ extension PersonalVC:UICollectionViewDataSource{
             return pinitemsList.count
         }
         return 0
-      
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -249,10 +247,7 @@ extension PersonalVC:UICollectionViewDataSource{
             }
             return cell
         }
-     
-
     }
-    
 }
 
 // MARK: - UICollectionViewDelegate protocol

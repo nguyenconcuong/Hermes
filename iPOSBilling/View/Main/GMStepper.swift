@@ -25,6 +25,7 @@ import UIKit
                 label.text = items[Int(value)]
             }
             else if showIntegerIfDoubleIsInteger && isInteger {
+                label.text = String(stringInterpolationSegment: <#T##DefaultStringInterpolation#>: Int(value))
                 label.text = String(stringInterpolationSegment: Int(value))
             } else {
                 label.text = String(stringInterpolationSegment: value)

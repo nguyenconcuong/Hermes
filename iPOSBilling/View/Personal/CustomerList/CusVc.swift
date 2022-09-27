@@ -11,6 +11,7 @@ import UIKit
 class CusVc: UIViewController {
     var Customer: Customer?
     var listTableCustomer: [ListTableData] = []
+    var itemGroup: [ItemGroup]?
     var checkSection = true
     var checkSection1 = true
     var checkSection2 = true
@@ -23,8 +24,10 @@ class CusVc: UIViewController {
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var tblCus: UITableView!
     override func viewDidLoad() {
-        initData()
+    
         super.viewDidLoad()
+        title = "Thông tin Khách hàng"
+        initData()
         setView()
         tblCus.rowHeight = UITableView.automaticDimension
         tblCus.estimatedRowHeight = 1000
@@ -50,8 +53,6 @@ class CusVc: UIViewController {
         if let id = Customer?.companyId{
             txtId.text = "id: \(id)"
         }
-      
-    
     }
 
     /*
@@ -181,6 +182,8 @@ class CusVc: UIViewController {
         listTableCustomer.append(ListTableData(title: "Thông tin Hỗ Trợ", tableData: tableDataList,eContracts: nil))
         if let eContractslist = Customer?.eContracts{
             listTableCustomer.append(ListTableData(title: "QUY ĐỊNH MUA HÀNG", tableData: nil, eContracts: eContractslist))
+        }else {
+            listTableCustomer.append(ListTableData(title: "QUY ĐỊNH MUA HÀNG", tableData: nil, eContracts: nil))
         }
         tableDataList.removeAll()
         tableDataList.append(TableData(title: "ic_care", value: "Chăm sóc"))
@@ -210,7 +213,8 @@ class CusVc: UIViewController {
         return formatter.string(from: yourDate!)
     }
     @IBAction func btnEdit(_ sender: Any) {
-        
+      //  let CustomerEditView = CustomerEditView(nibName: "CustomerEditView", bundle: nil)
+     //   self.present(CustomerEditView, animated: true)
     }
     @objc func handleAddButtonDidTap(button: UIButton) {
      
@@ -219,11 +223,18 @@ class CusVc: UIViewController {
         switch section {
         case 0:
             checkSection = !checkSection
-           
+            button.setImage(UIImage(named: "ic_arrow_down"), for: .normal)
+            
         case 1:
             checkSection1 = !checkSection1
+            
+            button.setImage(UIImage(named: "ic_arrow_down"), for: .normal)
+
         case 2:
             checkSection2 = !checkSection2
+            
+            button.setImage(UIImage(named: "ic_arrow_down"), for: .normal)
+
         case 3:
             if checkSection3 {
                 button.setImage(UIImage(named: "ic_arrow_customer"), for: .normal)
@@ -247,6 +258,26 @@ extension CusVc: UITableViewDelegate{
 }
 // MARK: - UITableViewDataSource
 extension CusVc: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        switch indexPath.section {
+        case 0:
+            break
+        case 3:
+            switch indexPath.row {
+            case 1:
+                let pycListVC = PYCListVC(nibName: "PYCListVC", bundle: nil)
+                pycListVC.customer = Customer
+                let nav = UINavigationController(rootViewController: pycListVC)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
+            default:
+                break
+            }
+        default:
+            break
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -285,15 +316,15 @@ extension CusVc: UITableViewDataSource{
             let label = UILabel()
         let button = UIButton()
         button.setImage(UIImage(named: "ic_arrow_customer"), for: .normal)
-        button.frame = CGRect.init(x: headerView.frame.width-30, y: 0, width: 40, height: 40)
+        button.frame = CGRect.init(x: headerView.frame.width-40, y: 0, width: 40, height: 40)
         button.addTarget(self, action: #selector(handleAddButtonDidTap), for: .touchUpInside)
         button.tag = section
         label.textColor = UIColor(red: 0.502, green: 0.502, blue: 0.502, alpha: 1)
         label.font =  UIFont(name: "SFUIDisplay-Semibold", size: 15)
         label.frame = CGRect.init(x: 10, y: 10, width: headerView.frame.width-10, height: 20)
         label.text = listTableCustomer[section].title
-            label.font = .systemFont(ofSize: 17)
-            label.textColor = .darkGray
+        label.font = .systemFont(ofSize: 17)
+        label.textColor = .darkGray
         headerView.addSubview(button)
             headerView.addSubview(label)
             return headerView

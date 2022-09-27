@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>baseURL</key>
+    <string>$(base_URL)</string>
 	<key>ACCESS_TOKEN</key>
-	<string>$(ACCESS_TOKEN)</string>
+	<string>$(ACCESS_TOKEN)</string>	
 	<key>ANALYTIC_APP_KEY</key>
 	<string>$(ANALYTIC_APP_KEY)</string>
 	<key>ANALYTIC_HOST</key>

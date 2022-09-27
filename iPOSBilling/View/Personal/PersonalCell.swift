@@ -26,7 +26,6 @@ class PersonalCVC: UICollectionViewCell, UIGestureRecognizerDelegate {
         self.addGestureRecognizer(longPressRecognizer)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         self.addGestureRecognizer(tapGestureRecognizer)
-            
         super.awakeFromNib()
         // Initialization code
         txtTitle.font = UIFont(name: "SFUIDisplay-Regular", size: 13)

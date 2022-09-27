@@ -7,3 +7,7 @@
 //
 
 import Foundation
+struct ServiceList {
+    var title:String?
+    var Service:[Service]?
+}

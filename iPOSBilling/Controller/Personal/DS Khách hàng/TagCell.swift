@@ -10,9 +10,13 @@ import UIKit
 
 class TagCell: UICollectionViewCell {
 
+    @IBOutlet weak var txtTag: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.layer.cornerRadius = 5
+      self.layer.backgroundColor = UIColor(red: 0.925, green: 0.925, blue: 0.925, alpha: 1).cgColor
+        // Initialization codes
     }
+    
 
 }

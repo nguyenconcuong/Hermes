@@ -7,4 +7,7 @@
 //
 
 // Configuration settings file format documentation can be found at:
+#include "/Users/ipos/Downloads/ios-billing/Pods/Target Support Files/Pods-iPOSBilling/Pods-iPOSBilling.staging.xcconfig"
 // https://help.apple.com/xcode/#/dev745c5c974
+base_URL = http:\/\/billing-stag.ipos.vn
+

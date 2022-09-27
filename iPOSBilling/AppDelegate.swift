@@ -7,15 +7,18 @@
 //
 
 import UIKit
-
+import DropDown
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+ 
     let baseurl = "https://apibilling.iposdev.com"
     static let shareDelegate = UIApplication.shared.delegate as! AppDelegate
     var user: User?
     var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        DropDown.startListeningToKeyboard()
         let userToken = UserDefaults.standard.string(forKey: "userToken")
         let userEmail = UserDefaults.standard.string(forKey: "userEmail")
         if let userToken = userToken,let userEmail = userEmail{
@@ -52,10 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
+
     func applicationDidBecomeActive(_ application: UIApplication) {
       
     }
-    
     @objc func logEventFirebase(notify: Notification) {
 //        let userInfo = notify.userInfo as? [String: Any]
     }

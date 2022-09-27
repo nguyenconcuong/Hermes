@@ -1,5 +1,5 @@
 //
-//  Config.xcconfig
+//  Debug.xcconfig
 //  iPOSBilling
 //
 //  Created by ipos on 19/09/2022.
@@ -7,4 +7,7 @@
 //
 
 // Configuration settings file format documentation can be found at:
+#include "/Users/ipos/Downloads/ios-billing/Pods/Target Support Files/Pods-iPOSBilling/Pods-iPOSBilling.debug.xcconfig"
 // https://help.apple.com/xcode/#/dev745c5c974
+base_URL = https:\/\/apibilling.iposdev.com
+

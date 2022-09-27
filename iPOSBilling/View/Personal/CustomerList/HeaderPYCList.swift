@@ -10,8 +10,10 @@ import UIKit
 
 class HeaderPYCList: UICollectionReusableView {
 
+    @IBOutlet weak var txtHeader: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        txtHeader.font = UIFont(name: "SFUDisplay-Regular", size: 17)
         // Initialization code
     }
     

@@ -9,5 +9,8 @@
 import UIKit
 
 class TagCvlayout: UICollectionViewLayout {
+    override func prepare() {
+        super.prepare()
+         
+    }}
 
-}
