@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACCESS_TOKEN</key>
+	<string>$(ACCESS_TOKEN)</string>
+	<key>ANALYTIC_APP_KEY</key>
+	<string>$(ANALYTIC_APP_KEY)</string>
+	<key>ANALYTIC_HOST</key>
+	<string>$(ANALYTIC_HOST)</string>
+	<key>ANALYTIC_HOST_HTTP_PROTOCOL</key>
+	<string>$(ANALYTIC_HOST_HTTP_PROTOCOL)</string>
+	<key>BASE_URL_API_ENDPOINT</key>
+	<string>$(BASE_URL_API_ENDPOINT)</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.865574685707-113rmu1pehtdbebihba1vvpcgldht49i</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>211</string>
+	<key>HTTP_PROTOCOL</key>
+	<string>$(HTTP_PROTOCOL)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Ứng dụng muốn truy cập camera để chụp ảnh avatar, Quét mã QRcode</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Ứng dụng muốn truy cập vào danh bạ để có thể thêm nhanh liên hệ của khách hàng khi bạn cần</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Vị trí của bạn sẽ được sử dụng để chỉ đường tới nhà hàng, gợi ý cửa hàng gần nhất xung quanh bạn.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Vị trí của bạn sẽ được sử dụng để chỉ đường tới nhà hàng, gợi ý cửa hàng gần nhất xung quanh bạn.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng muốn truy cập thư viện ảnh để cho phép bạn chọn ảnh avatar</string>
+	<key>SERVICE_PATH</key>
+	<string>$(SERVICE_PATH)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SanFranciscoDisplay-Bold.OTF</string>
+		<string>AMERICORPS.TTF</string>
+		<string>SFUIDisplay-Medium.OTF</string>
+		<string>Sofachrome-Regular.OTF</string>
+		<string>SFUIDisplay-Regular.otf</string>
+		<string>SFUIDisplay-Semibold.otf</string>
+		<string>SFUIDisplay-Medium.otf</string>
+		<string>SFUIDisplay-Ultralight.otf</string>
+		<string>SFUIDisplay-Light.ttf</string>
+		<dict>
+			<key>NSAllowsArbitraryLoads</key>
+			<true/>
+		</dict>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+</dict>
+</plist>
